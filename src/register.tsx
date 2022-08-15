@@ -26,10 +26,22 @@ addons.register(ADDON_ID, () => {
   });
 
   addons.setConfig({
+    showRoots: false,
     sidebar: {
       renderLabel: (item: RenderLabelItem) => {
         const { name, isLeaf, parameters } = item;
-        // item can be a Root | Group | Story
+        // eslint-disable-next-line no-bitwise
+        const tmp = ~name.indexOf('-[deprecated]');
+        if (tmp) {
+          return (
+            <>
+              {name.slice(0, tmp)}
+              <StatusDot
+                type="deprecated"
+              />
+            </>
+          );
+        }
         if (!isLeaf || !parameters || !parameters.status) {
           return name;
         }
