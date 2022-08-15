@@ -10,11 +10,13 @@ require("core-js/modules/es.array.index-of");
 
 require("core-js/modules/es.array.is-array");
 
-require("core-js/modules/es.array.slice");
-
 require("core-js/modules/es.function.name");
 
 require("core-js/modules/es.object.assign");
+
+require("core-js/modules/es.regexp.exec");
+
+require("core-js/modules/es.string.replace");
 
 var _addons = require("@storybook/addons");
 
@@ -22,7 +24,7 @@ var _lodash = require("lodash");
 
 var _react = _interopRequireDefault(require("react"));
 
-var _StatusDot = _interopRequireDefault(require("./components/StatusDot"));
+var _StatusDot = require("./components/StatusDot");
 
 var _StatusTag = _interopRequireDefault(require("./components/StatusTag"));
 
@@ -53,10 +55,8 @@ _addons.addons.register(_constants.ADDON_ID, function () {
             isLeaf = item.isLeaf,
             parameters = item.parameters; // eslint-disable-next-line no-bitwise
 
-        var tmp = ~name.indexOf('-[deprecated]');
-
-        if (tmp) {
-          return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, name.slice(0, tmp), /*#__PURE__*/_react["default"].createElement(_StatusDot["default"], {
+        if (~name.indexOf('[deprecated]')) {
+          return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_StatusDot.StatusName, null, ' ', name.replace('[deprecated]', '')), /*#__PURE__*/_react["default"].createElement(_StatusDot.StatusDot, {
             type: "deprecated"
           }));
         }
@@ -86,7 +86,7 @@ _addons.addons.register(_constants.ADDON_ID, function () {
 
         var background = statusConfig.background,
             description = statusConfig.description;
-        return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, name, /*#__PURE__*/_react["default"].createElement(_StatusDot["default"], {
+        return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, name, /*#__PURE__*/_react["default"].createElement(_StatusDot.StatusDot, {
           type: statusName,
           background: background,
           title: "".concat((0, _lodash.startCase)(statusName), ": ").concat(description)
