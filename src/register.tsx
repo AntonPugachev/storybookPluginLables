@@ -2,7 +2,7 @@ import { addons, types } from '@storybook/addons';
 import { startCase } from 'lodash';
 import React from 'react';
 
-import StatusDot from './components/StatusDot';
+import { StatusDot, StatusName } from './components/StatusDot';
 import Status from './components/StatusTag';
 import { ADDON_ID } from './constants';
 import { defaultStatuses } from './defaults';
@@ -31,11 +31,13 @@ addons.register(ADDON_ID, () => {
       renderLabel: (item: RenderLabelItem) => {
         const { name, isLeaf, parameters } = item;
         // eslint-disable-next-line no-bitwise
-        const tmp = ~name.indexOf('-[deprecated]');
-        if (tmp) {
+        if (~name.indexOf('[deprecated]')) {
           return (
             <>
-              {name.slice(0, tmp)}
+              <StatusName>
+                {' '}
+                {name.replace('[deprecated]', '')}
+              </StatusName>
               <StatusDot
                 type="deprecated"
               />
