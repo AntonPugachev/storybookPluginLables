@@ -48,7 +48,6 @@ _addons.addons.register(_constants.ADDON_ID, function () {
   });
 
   _addons.addons.setConfig({
-    showRoots: false,
     sidebar: {
       renderLabel: function renderLabel(item) {
         var name = item.name,

@@ -26,7 +26,6 @@ addons.register(ADDON_ID, () => {
   });
 
   addons.setConfig({
-    showRoots: false,
     sidebar: {
       renderLabel: (item: RenderLabelItem) => {
         const { name, isLeaf, parameters } = item;
