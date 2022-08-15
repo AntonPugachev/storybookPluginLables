@@ -6,7 +6,11 @@ require("core-js/modules/es.symbol.description");
 
 require("core-js/modules/es.array.concat");
 
+require("core-js/modules/es.array.index-of");
+
 require("core-js/modules/es.array.is-array");
+
+require("core-js/modules/es.array.slice");
 
 require("core-js/modules/es.function.name");
 
@@ -47,9 +51,15 @@ _addons.addons.register(_constants.ADDON_ID, function () {
       renderLabel: function renderLabel(item) {
         var name = item.name,
             isLeaf = item.isLeaf,
-            parameters = item.parameters; // item can be a Root | Group | Story
+            parameters = item.parameters; // eslint-disable-next-line no-bitwise
 
-        debugger;
+        var tmp = ~name.indexOf('-[deprecated]');
+
+        if (tmp) {
+          return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, name.slice(0, tmp), /*#__PURE__*/_react["default"].createElement(_StatusDot["default"], {
+            type: "deprecated"
+          }));
+        }
 
         if (!isLeaf || !parameters || !parameters.status) {
           return name;
