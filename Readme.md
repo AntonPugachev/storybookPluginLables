@@ -88,6 +88,3 @@ You'll get an awesome label injected in the top toolbar and the sidebar.
 
 Made with ☕ at [Etch](https://etch.co)
 
-## Migration guide
-
-Need to [update your major version](Migration.md)?
