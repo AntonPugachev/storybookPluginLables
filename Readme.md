@@ -1,4 +1,6 @@
-Clone with updated deps versions and with seprecated statuses in the tree
+Fork of https://github.com/etchteam/storybook-addon-status with updated deps versions and with seprecated statuses in the tree
+
+
 ![img.png](img.png)
 # Storybook Addon Status
 
