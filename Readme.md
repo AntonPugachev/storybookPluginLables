@@ -1,3 +1,5 @@
+Clone with updated deps versions and with seprecated statuses in the tree
+![img.png](img.png)
 # Storybook Addon Status
 
 Storybook Status Addon can be used to add a component status label in [Storybook](https://storybook.js.org).

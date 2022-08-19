@@ -1,7 +1,7 @@
 {
-  "name": "@etchteam/storybook-addon-status",
-  "version": "0.0.1",
-  "description": "Add component status to the storybook UI",
+  "name": "storybook-plugin-labels",
+  "version": "0.0.3",
+  "description": "Add component status to the storybook UI clone",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/etchteam/storybook-addon-status.git"
+    "url": "git+https://github.com/AntonPugachev/storybookPluginLables.git"
   },
   "keywords": [
     "storybook",
@@ -27,11 +27,8 @@
     "organize",
     "popular"
   ],
-  "author": "gavmck",
+  "author": "AntonPugachev",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/etchteam/storybook-addon-status/issues"
-  },
   "homepage": "https://github.com/etchteam/storybook-addon-status#readme",
   "dependencies": {
     "@storybook/addons": "^6.5.10",

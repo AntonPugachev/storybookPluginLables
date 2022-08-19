@@ -13,7 +13,7 @@ var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StatusName = _theming.styled.span(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ntext-decoration: line-through;\n"])));
+var StatusName = _theming.styled.span(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  text-decoration: line-through;\n  color: #84c8ca69;\n  cursor: no-drop;\n"])));
 
 exports.StatusName = StatusName;
 

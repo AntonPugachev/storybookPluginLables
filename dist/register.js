@@ -52,12 +52,11 @@ _addons.addons.register(_constants.ADDON_ID, function () {
       renderLabel: function renderLabel(item) {
         var name = item.name,
             isLeaf = item.isLeaf,
-            parameters = item.parameters; // eslint-disable-next-line no-bitwise
+            parameters = item.parameters;
+        console.log('test'); // eslint-disable-next-line no-bitwise
 
         if (~name.indexOf('[deprecated]')) {
-          return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_StatusDot.StatusName, null, ' ', name.replace('[deprecated]', '')), /*#__PURE__*/_react["default"].createElement(_StatusDot.StatusDot, {
-            type: "deprecated"
-          }));
+          return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_StatusDot.StatusName, null, name.replace('[deprecated]', '')));
         }
 
         if (!isLeaf || !parameters || !parameters.status) {

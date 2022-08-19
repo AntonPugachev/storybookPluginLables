@@ -6,7 +6,9 @@ type StatusDotProps = {
   background?: string;
 };
 export const StatusName = styled.span`
-text-decoration: line-through;
+  text-decoration: line-through;
+  color: #84c8ca69;
+  cursor: no-drop;
 `;
 export const StatusDot = styled.span<StatusDotProps>`
   align-self: center;
