@@ -29,7 +29,7 @@ addons.register(ADDON_ID, () => {
     sidebar: {
       renderLabel: (item: RenderLabelItem) => {
         const { name, isLeaf, parameters } = item;
-        console.log('test');
+
         // eslint-disable-next-line no-bitwise
         if (~name.indexOf('[deprecated]')) {
           return (
