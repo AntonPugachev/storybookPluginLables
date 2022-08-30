@@ -10,7 +10,7 @@ import type { AddonParameters, CustomStatusType } from '../types';
 const tagStyles = css`
   align-self: center;
   border-radius: 0.25em;
-  padding: 0 0.5em;
+
   text-decoration: none;
   user-select: none;
   font-size: 11px;
